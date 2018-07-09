@@ -1,0 +1,157 @@
+{% extends 'layout.html' %}
+
+{% block css %}
+    <style>
+        .comb-search .item{
+            margin: 5px 0;
+        }
+        .comb-search .item a{
+            border: 1px solid #dddddd;
+            display: inline-block;
+            padding: 3px 8px;
+        }
+        .comb-search .item a.active{
+            background-color: #337ab7;
+            color: white;
+        }
+    </style>
+
+{% endblock %}
+
+
+{% block  body %}
+
+    <!-- 模态框   信息删除确认 -->
+    <div class="modal fade" id="delcfmOverhaul">
+        <div class="modal-dialog">
+            <div class="modal-content message_align">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"
+                        aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                    <h4 class="modal-title">提示</h4>
+                </div>
+                <div class="modal-body">
+                    <!-- 隐藏需要删除的id -->
+                    <input type="hidden" id="deleteHaulId" />
+                    <p>您确认要删除该条信息吗？</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default"
+                        data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary"
+                        id="deleteHaulBtn">确认</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+    </div>
+        <!-- /.modal-dialog -->
+
+
+
+
+
+
+
+
+
+
+    <div>
+        <h1>列表页面</h1>
+        <!-- 组合搜索开始 -->
+        <div class="comb-search">
+            {% for row in cl.show_comb_search %}
+
+                <div class="item">
+                    {% for item in row %}
+
+                        {{ item }}
+                    {% endfor %}
+
+                </div>
+            {% endfor %}
+
+        </div>
+
+        <!-- 组合搜索结束 -->
+
+        <!-- 搜索 -->
+        {% if cl.search_list %}
+            <div style="float: right">
+                <form class="form-inline" method="get">
+                  <div class="form-group">
+                    <input type="text" class="form-control" name="key" placeholder="请输入关键字" value="{{ cl.search_value }}">
+                  </div>
+                  <button type="submit" class="btn btn-primary">
+                      <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                  </button>
+                </form>
+            </div>
+        {% endif %}
+
+        {% if cl.show_add_btn %}
+        <div style="margin: 5px 0">
+            <a href="{{ cl.add_url }}" class="btn btn-success">添加</a>
+        </div>
+        {% endif %}
+
+        <form class="form-inline" method="post">
+            {% csrf_token %}
+
+            {% if cl.action_list %}
+                <div style="margin: 5px 0">
+                    <!-- 批量操作 -->
+                      <div class="form-group">
+                          <select class="form-control" name="xxxx">
+                              <option value="">请选择操作</option>
+                              {% for ac in cl.action_list %}
+                                  <option value="{{ ac.funcname }}">{{ ac.name }}</option>
+                              {% endfor %}
+                          </select>
+                      </div>
+                      <button type="submit" class="btn btn-primary">执行</button>
+                </div>
+            {% endif %}
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        {% for item in cl.header_list %}
+                            <th>{{ item }}</th>
+                        {% endfor%}
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in cl.body_list %}
+                    <tr>
+                        {% for col in row %}
+                            <td>{{ col }}</td>
+                        {% endfor %}
+                    </tr>
+                    {% endfor %}
+
+                </tbody>
+            </table>
+         </form>
+        <ul class="pagination">
+            {{ cl.page_obj.bootstrap_page_html }}
+        </ul>
+    </div>
+
+
+    <script src="/static/jquery-1.12.4.js"></script>
+    <script>
+        function deleteHaulinfo() {
+        alert("你即将删除的大修ID" + $("#deleteHaulId").val())
+    }
+    $(function() {
+    // 删除大修模态框的确定按钮的点击事件
+    $("#deleteHaulBtn").click(function() {
+    // ajax异步删除
+    deleteHaulinfo();
+    });
+
+    });
+    </script>
+{% endblock %}

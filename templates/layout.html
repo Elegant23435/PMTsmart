@@ -1,0 +1,509 @@
+{% load menu %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PMT资源管理系统</title>
+
+
+    <!--STYLESHEET-->
+    <!--=================================================-->
+
+    <!--Bootstrap Stylesheet [ REQUIRED ]-->
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <!--Nifty Stylesheet [ REQUIRED ]-->
+    <link href="/static/css/nifty.min.css" rel="stylesheet">
+    <link href="/static/css/custom.css" rel="stylesheet">
+
+
+    <!--Font Awesome [ OPTIONAL ]-->
+    <link href="/static/css/font-awesome.min.css" rel="stylesheet">
+
+
+    {% block css %}
+        <link rel="stylesheet" href="/rbac/static/css/style.css" media="screen" type="text/css" />
+    {% endblock %}
+{#    <!--extra额外的CSS-->#}
+{#    <link rel="stylesheet" href="/rbac/static/rbac/menu.css" />#}
+{##}
+{##}
+{#    {% block menu.css %}#}
+{##}
+{#    {% endblock %}#}
+
+    <!--SCRIPT-->
+    <!--=================================================-->
+
+    <!--Page Load Progress Bar [ OPTIONAL ]-->
+    <link href="/static/css/pace.min.css" rel="stylesheet">
+    <script src="/static/js/pace.min.js"></script>
+
+
+
+</head>
+
+<body>
+    <div id="container" class="effect mainnav-lg navbar-fixed footer-fixed" >
+
+        <!--NAVBAR-->
+        <header id="navbar">
+            <div id="navbar-container" class="boxed">
+
+                <!--Brand logo & name----公司logo和名字>
+                <!--================================-->
+                <div class="navbar-header" >
+                    <a target="_blank" href="http://www.prometaltech.com" class="navbar-brand">
+                        <img src="/static/imgs/logo1.png" alt="Nifty Logo" class="brand-icon">
+
+                        <div class="brand-title" >
+                            <span class="brand-text">PrometalTech</span>
+                        </div>
+                    </a>
+                </div>
+                <!--================================-->
+                <!--End brand logo & name-->
+
+
+                <!--Navbar Dropdown-->
+                <!--================================-->
+                <div class="navbar-content clearfix " style="background-color:#B0C4DE">
+                    <ul class="nav navbar-top-links pull-left">
+                        <!--Navigation toogle button-->
+                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                        <li class="tgl-menu-btn">
+                            <a class="" href="#">
+                                <i class="fa fa-navicon fa-lg"></i>
+                            </a>
+                        </li>
+                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                        <!--End Navigation toogle button-->
+                        <!--End mega dropdown-->
+
+
+                        <li class="dropdown">
+                            <a href="#" data-toggle="dropdown" class="dropdown-toggle">
+                                <i class="fa fa-bell-o"></i>
+{#                                <span class="glyphicon glyphicon-bell" aria-hidden="true"></span>#}
+                                <span class="badge badge-header badge-danger"></span>
+                            </a>
+
+                            <!--Notification dropdown menu-->
+                            <div class="dropdown-menu dropdown-menu-md">
+                                <div class="pad-all bord-btm">
+                                    <p class="text-semibold text-main mar-no">You have 9 notifications.</p>
+                                </div>
+                                <div class="nano scrollable">
+                                    <div class="nano-content">
+                                        <ul class="head-list">
+
+                                            <!-- Dropdown list-->
+                                            <li>
+                                                <a href="#">
+                                                    <div class="clearfix">
+                                                        <p class="pull-left">Database Repair</p>
+                                                        <p class="pull-right">70%</p>
+                                                    </div>
+                                                    <div class="progress progress-sm">
+                                                        <div style="width: 70%;" class="progress-bar">
+                                                            <span class="sr-only">70% Complete</span>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </li>
+
+                                            <!-- Dropdown list-->
+                                            <li>
+                                                <a href="#">
+                                                    <div class="clearfix">
+                                                        <p class="pull-left">Upgrade Progress</p>
+                                                        <p class="pull-right">10%</p>
+                                                    </div>
+                                                    <div class="progress progress-sm">
+                                                        <div style="width: 10%;" class="progress-bar progress-bar-warning">
+                                                            <span class="sr-only">10% Complete</span>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </li>
+
+                                            <!-- Dropdown list-->
+                                            <li>
+                                                <a class="media" href="#">
+                                            <span class="badge badge-success pull-right">90%</span>
+                                                    <div class="media-left">
+                                                        <i class="demo-pli-data-settings icon-2x"></i>
+                                                    </div>
+                                                    <div class="media-body">
+                                                        <div class="text-nowrap">HDD is full</div>
+                                                        <small class="text-muted">50 minutes ago</small>
+                                                    </div>
+                                                </a>
+                                            </li>
+
+                                            <!-- Dropdown list-->
+                                            <li>
+                                                <a class="media" href="#">
+                                                    <div class="media-left">
+                                                        <i class="demo-pli-file-edit icon-2x"></i>
+                                                    </div>
+                                                    <div class="media-body">
+                                                        <div class="text-nowrap">Write a news article</div>
+                                                        <small class="text-muted">Last Update 8 hours ago</small>
+                                                    </div>
+                                                </a>
+                                            </li>
+
+                                            <!-- Dropdown list-->
+                                            <li>
+                                                <a class="media" href="#">
+                                            <span class="label label-danger pull-right">New</span>
+                                                    <div class="media-left">
+                                                        <i class="demo-pli-speech-bubble-7 icon-2x"></i>
+                                                    </div>
+                                                    <div class="media-body">
+                                                        <div class="text-nowrap">Comment Sorting</div>
+                                                        <small class="text-muted">Last Update 8 hours ago</small>
+                                                    </div>
+                                                </a>
+                                            </li>
+
+                                            <!-- Dropdown list-->
+                                            <li>
+                                                <a class="media" href="#">
+                                                    <div class="media-left">
+                                                        <i class="demo-pli-add-user-plus-star icon-2x"></i>
+                                                    </div>
+                                                    <div class="media-body">
+                                                        <div class="text-nowrap">New User Registered</div>
+                                                        <small class="text-muted">4 minutes ago</small>
+                                                    </div>
+                                                </a>
+                                            </li>
+
+
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <!--Dropdown footer-->
+                                <div class="pad-all bord-top">
+                                    <a href="#" class="btn-link text-dark box-block">
+                                        <i class="fa fa-angle-right fa-lg pull-right"></i>Show All Notifications
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+
+                    </ul>
+                    <ul class="nav navbar-top-links pull-right">
+                        <li class="dropdown ">
+                            <a id="demo-lang-switch" class="lang-selector dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="true">
+                                <span class="lang-selected">
+                                    <img class="lang-flag" src="/static/imgs/flags/united-kingdom.png" alt="English">
+                                </span>
+                            </a>
+
+                            <!--Language selector menu-->
+                            <ul class="head-list dropdown-menu">
+                                <li>
+                                    <!--English-->
+                                    <a href="#" class="active">
+                                        <img class="lang-flag" src="/static/imgs/flags/united-kingdom.png" alt="English">
+                                        <span class="lang-id">EN</span>
+                                        <span class="lang-name">English</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <!--France-->
+                                    <a href="#">
+                                        <img class="lang-flag" src="/static/imgs/flags/france.png" alt="France">
+                                        <span class="lang-id">FR</span>
+                                        <span class="lang-name">Français</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <!--Germany-->
+                                    <a href="#">
+                                        <img class="lang-flag" src="/static/imgs/flags/germany.png" alt="Germany">
+                                        <span class="lang-id">DE</span>
+                                        <span class="lang-name">Deutsch</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <!--Italy-->
+                                    <a href="#">
+                                        <img class="lang-flag" src="/static/imgs/flags/italy.png" alt="Italy">
+                                        <span class="lang-id">IT</span>
+                                        <span class="lang-name">Italiano</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <!--Spain-->
+                                    <a href="#">
+                                        <img class="lang-flag" src="/static/imgs/flags/spain.png" alt="Spain">
+                                        <span class="lang-id">ES</span>
+                                        <span class="lang-name">Español</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <!--User dropdown-->
+                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                        <li id="dropdown-user" class="dropdown">
+                            <a href="#" data-toggle="dropdown" class="dropdown-toggle text-right">
+                                <span class="pull-right">
+                                    <img class="static/imgs-circle img-user media-object" src="/static/imgs/av1.png"
+                                         alt="Profile Picture">
+                                </span>
+
+                                <div class="username hidden-xs">欢迎您！{{ current_user.name }}</div>
+                            </a>
+
+
+                            <div class="dropdown-menu dropdown-menu-md dropdown-menu-right with-arrow panel-default">
+
+                                <!-- Dropdown heading  -->
+
+
+
+                                <!-- User dropdown menu --用户头像下拉菜单-->
+                                <ul class="head-list">
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-user fa-fw fa-lg"></i> 个人中心
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span class="badge badge-danger pull-right">9</span>
+                                            <i class="fa fa-envelope fa-fw fa-lg"></i>消息中心
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+{#                                            <span class="label label-success pull-right">New</span>#}
+                                            <i class="fa fa-gear fa-fw fa-lg"></i> 更改密码
+                                        </a>
+                                    </li>
+                                </ul>
+
+                                <!-- Dropdown footer --用户头像下拉单底部-->
+                                <div class="pad-all text-right">
+                                    <a href="{% url 'logout' %}" class="btn btn-primary">
+                                        <i class="fa fa-sign-out fa-fw"></i> 注销
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                        <!--End user dropdown-->
+
+                    </ul>
+                </div>
+                <!--================================-->
+                <!--End Navbar Dropdown-->
+
+            </div>
+        </header>
+        <!--===================================================-->
+        <!--END NAVBAR-->
+
+        <div class="boxed">
+
+            <!--CONTENT CONTAINER-->
+            <!--===================================================-->
+            <div id="content-container">
+
+                <!--Page Title----页面标题--->
+                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+{#                <div id="page-title">#}
+{#                    {% block "page-title" %}#}
+{#                        <h1 class="page-header text-overflow">{% block page-title-text %}欢迎访问PMT资源管理系统{% endblock %}</h1>#}
+{##}
+{##}
+{#                    {% endblock %}#}
+{#                </div>#}
+                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                <!--End page title-->
+
+
+                <!--Breadcrumb---面包屑--->
+{#                {% block breadcrumb %}#}
+{#                    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->#}
+{#                    <ol class="breadcrumb">#}
+{#                        <li><a href="#">Home</a></li>#}
+{#                        <li><a href="#">Library</a></li>#}
+{#                        <li class="active">Data</li>#}
+{#                    </ol>#}
+{#                {% endblock %}#}
+                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                <!--End breadcrumb-->
+
+
+                <!--Page content-----页面内容----->
+                <!--===================================================-->
+                <div id="page-content">
+                    <div class="body">
+                        {% block body %}{% endblock %}
+                    </div>
+                </div>
+                <!--===================================================-->
+                <!--End page content-->
+            </div>
+            <!--===================================================-->
+            <!--END CONTENT CONTAINER-->
+
+
+            <!--MAIN NAVIGATION-->
+            <!--===================================================-->
+            <nav id="mainnav-container">
+                <div id="mainnav">
+
+                    <!--Shortcut buttons----快捷按钮---->
+                    <!--================================-->
+                    <div id="mainnav-shortcut">
+                        <ul class="list-unstyled">
+                            <li class="col-xs-4" data-content="Shortcut 1">
+                                <a class="shortcut-grid" href="#">
+                                    <i class="fa fa-linux"></i>
+                                </a>
+                            </li>
+                            <li class="col-xs-4" data-content="Shortcut 2">
+                                <a class="shortcut-grid" href="#">
+                                    <i class="fa fa-apple"></i>
+                                </a>
+                            </li>
+                            <li class="col-xs-4" data-content="Shortcut 3">
+                                <a class="shortcut-grid" href="#">
+                                    <i class="fa fa-windows"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--================================-->
+                    <!--End shortcut buttons-->
+
+                    <!--Menu-------菜单内容--------->
+                    <!--================================-->
+                    <div >
+                        {% menu_html request %}
+                    </div>
+                    <!--================================-->
+                    <!--End menu-->
+
+                </div>
+            </nav>
+            <!--===================================================-->
+            <!--END MAIN NAVIGATION-->
+
+            <!--ASIDE-->
+            <!--===================================================-->
+            <!--===================================================-->
+            <!--END ASIDE-->
+
+        </div>
+
+
+        <!-- FOOTER -->
+        <!--===================================================-->
+        <footer id="footer" >
+
+            <!-- Visible when footer positions are fixed -->
+            <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <div class="show-fixed pull-right">
+                <ul class="footer-list list-inline" >
+                    <li>
+                        <p class="text-sm">Currently beta v2.0</p>
+
+                        <div class="progress progress-sm progress-light-base">
+                            <div style="width: 80%" class="progress-bar progress-bar-success"></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+
+            <!-- Visible when footer positions are static -->
+            <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+{#            <div class="hide-fixed pull-right pad-rgt">Currently beta v2.0</div>#}
+
+
+            <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <!-- Remove the class name "show-fixed" and "hide-fixed" to make the content always appears. -->
+            <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+            <p class="pad-lft" >&#0169; Copyright © 2016 - 2018 ProMetalTech. All Rights Reserved.</p>
+
+
+        </footer>
+        <!--===================================================-->
+        <!-- END FOOTER -->
+
+
+        <!-- SCROLL TOP BUTTON -->
+        <!--===================================================-->
+        <button id="scroll-top" class="btn"><i class="fa fa-chevron-up"></i></button>
+        <!--===================================================-->
+
+
+    </div>
+    <!--===================================================-->
+    <!-- END OF CONTAINER -->
+
+
+
+<!--JAVASCRIPT-->
+<!--=================================================-->
+
+<!--jQuery [ REQUIRED ]-->
+<script src="/static/js/jquery-2.1.1.min.js"></script>
+
+
+<!--BootstrapJS [ RECOMMENDED ]-->
+<script src="/static/js/bootstrap.min.js"></script>
+
+
+<!--Fast Click [ OPTIONAL ]-->
+<script src="/static/js/fastclick.min.js"></script>
+
+
+<!--Nifty Admin [ RECOMMENDED ]-->
+<script src="/static/js/nifty.min.js"></script>
+
+
+
+<script src="/static/jquery-1.12.4.js"></script>
+
+
+<script>
+    $(document).ready(function () {
+
+        if ("{{ active_url }}") {
+            var active_url = "{{ active_url }}";
+        } else {
+            var active_url = "{{ request.path  }}";
+
+        }
+        var active_menu = $("#mainnav-menu ").find("a[href='" + active_url + "']");
+        active_menu.parent().addClass("active-link");
+        if (active_menu.parent().parent().hasClass("collapse")) {
+            active_menu.parent().parent().addClass("in");
+        }
+    });//end doc ready
+
+</script>
+
+
+{% block bottom-js %}
+{% endblock %}
+
+{% block js %}
+    <script src="/rbac/static/js/index.js"></script>
+    <script src='/static/jquery-1.12.4.js'></script>
+{% endblock %}
+</body>
+</html>
